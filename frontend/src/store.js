@@ -1,19 +1,17 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
-import {
-  newPostReducer,
-  myPostReducer,
-  postReducer
-} from "./reducer/postReducer";
+import { myPostReducer, newPostReducer, postDetailReducer, postReducer, postsReduc, postsReducer } from "./reducer/postReducer";
 
 const reducer = combineReducers({
- posts:newPostReducer,
- deletedPosts:postReducer,
- postDetails:myPostReducer
+    myPost:myPostReducer,
+    newPost:newPostReducer,
+    postDetail:postDetailReducer,
+    deletePost:postReducer,
+    editPost:postReducer
 });
 
-let initialState = {
+let initialState = { 
 };
 
 const middleware = [thunk];
